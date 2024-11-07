@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Создание объекта</title>
+</head>
+<body>
+
+    <h1>Форма для создания объекта</h1>
+
+    <form th:each="z :${orders}" method="post">
+
+     
+        <label for="status">Статус:</label>
+        <select id="status" name="status" required>
+            <option value="">Выберите статус</option>  <!-- Добавлено пустое значение по умолчанию -->
+            <option value="В ожидании">В ожидании</option>
+            <option value="В работе">В работе</option>
+            <option value="Выполнено">Выполнено</option>
+        </select>
+        <br><br>
+
+
+        <label for="desc"> Текущие пожелания:</label>
+        <textarea id="desc" name="desc" th:text="${z.desc}" required></textarea>
+        <br><br>
+        <label for="worcer"> Администратор:</label>
+        <textarea id="worcer" name="worcer" th:text="${z.worcer}" required></textarea>
+        <br><br>
+
+        <button type="submit">Изменить объект</button>
+    </form>
+
+</body>
+</html>

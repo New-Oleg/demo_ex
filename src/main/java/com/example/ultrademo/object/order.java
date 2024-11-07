@@ -18,8 +18,10 @@ public class order {
     @GeneratedValue(strategy=GenerationType.AUTO)
     private int id;
 
+    private String worcer;
+
     private LocalDate dayStart;
-    
+
     private String oborudovanie;
     private String typeProblem;
     private String description;
